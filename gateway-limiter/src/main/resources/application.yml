@@ -1,0 +1,46 @@
+server:
+  port: 8081
+
+limit:
+  type: enhance
+
+spring:
+  redis:
+    jedis:
+      pool:
+        max-wait: 3s
+        min-idle: 50
+        max-idle: 1000
+        max-active: 2000
+    timeout: 4000
+    cluster:
+      nodes:
+        - 172.16.3.191:7000
+        - 172.16.3.191:7001
+        - 172.16.3.191:7002
+        - 172.16.3.191:7100
+        - 172.16.3.191:7101
+        - 172.16.3.191:7102
+    password: passwd456
+
+#        - 172.16.1.91:30001
+#        - 172.16.1.91:30002
+#        - 172.16.1.91:30003
+#        - 172.16.1.91:30004
+#        - 172.16.1.91:30005
+#        - 172.16.1.91:30006
+
+
+#spring:
+#  redis:
+#    database: 0
+#    host: 172.16.1.91
+#    port: 30001
+#    password: # 如果未单独配置默认为空即可
+#    timeout: 1000
+#    jedis:
+#      pool:
+#        max-active: 8
+#        max-wait: -1
+#        max-idle: 8
+#        min-idle: 0
